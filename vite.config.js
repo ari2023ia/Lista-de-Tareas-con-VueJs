@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { ghPages } from 'vite-plugin-gh-pages'
 
 export default defineConfig({
   plugins: [
@@ -9,11 +10,13 @@ export default defineConfig({
           runtimeCompiler: true
         }
       }
-    })
+    }),
+    ghPages()
   ],
+  base: 'Lista-de-Tareas-con-VueJs',
   resolve: {
     alias: {
       vue: 'vue/dist/vue.esm-bundler.js'
     }
-  }
+  },
 })
